@@ -23,7 +23,7 @@ jobs:
                   - uses: oven-sh/setup-bun@v1
                     with:
                           bun-version: latest
-                  - run: bun install
+                  - run: bun ci
                   - run: bun run build
                   - run: npx changelogithub
                     continue-on-error: true
