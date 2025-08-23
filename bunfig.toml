@@ -1,0 +1,7 @@
+[test]
+
+# always enable coverage
+#coverage = true
+
+# to require 100% line-level and function-level coverage
+coverageThreshold = 1.00
