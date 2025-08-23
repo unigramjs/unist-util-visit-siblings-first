@@ -1,7 +1,7 @@
 {
 	"name": "unist-util-visit-siblings-first",
 	"description": "Breadth-first traversal for unist ASTs — visits siblings before descending into children",
-	"version": "1.0.0-alpha.2",
+	"version": "1.0.0-alpha.3",
 	"type": "module",
 	"files": [
 		"dist",
