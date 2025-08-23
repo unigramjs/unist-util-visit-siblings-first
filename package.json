@@ -3,14 +3,19 @@
 	"description": "Breadth-first traversal for unist ASTs — visits siblings before descending into children",
 	"version": "1.0.0-alpha.3",
 	"type": "module",
-	"files": [
-		"dist",
-		"README.md",
-		"package.json"
-	],
+	"license": "MIT",
 	"module": "./dist/index.js",
 	"main": "./dist/index.cjs",
 	"types": "./dist/index.d.ts",
+	"private": false,
+	"homepage": "https://github.com/unigramjs/unist-util-visit-siblings-first#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/unigramjs/unist-util-visit-siblings-first.git"
+	},
+	"bugs": {
+		"url": "https://github.com/unigramjs/unist-util-visit-siblings-first/issues"
+	},
 	"exports": {
 		".": {
 			"import": {
@@ -23,6 +28,22 @@
 			}
 		}
 	},
+	"files": [
+		"dist",
+		"README.md",
+		"package.json"
+	],
+	"keywords": [
+		"unist",
+		"ast",
+		"visit",
+		"walk",
+		"traverse",
+		"mdast",
+		"tgast",
+		"hast",
+		"unigramjs"
+	],
 	"scripts": {
 		"build": "bunup",
 		"dev": "bunup --watch",
@@ -38,48 +59,19 @@
 		"publish:ci": "bun publish --access public --no-git-checks",
 		"prepare": "simple-git-hooks"
 	},
+	"dependencies": {
+		"@types/unist": "^3.0.3",
+		"yocto-queue": "^1.2.1"
+	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.2.0",
 		"@types/bun": "^1.2.20",
-		"@types/unist": "^3.0.3",
 		"bumpp": "^10.2.3",
 		"bunup": "^0.11.2",
 		"simple-git-hooks": "^2.13.1",
 		"typescript": "^5.9.2"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/unigramjs/unist-util-visit-siblings-first.git"
-	},
-	"peerDependencies": {
-		"@types/unist": ">=3.0.3"
-	},
-	"peerDependenciesMeta": {
-		"@types/unist": {
-			"optional": true
-		}
-	},
 	"simple-git-hooks": {
 		"pre-commit": "bun run lint:fix && git add ."
-	},
-	"homepage": "https://github.com/unigramjs/unist-util-visit-siblings-first#readme",
-	"bugs": {
-		"url": "https://github.com/unigramjs/unist-util-visit-siblings-first/issues"
-	},
-	"license": "MIT",
-	"dependencies": {
-		"yocto-queue": "^1.2.1"
-	},
-	"private": false,
-	"keywords": [
-		"unist",
-		"ast",
-		"visit",
-		"walk",
-		"traverse",
-		"mdast",
-		"tgast",
-		"hast",
-		"unigramjs"
-	]
+	}
 }
