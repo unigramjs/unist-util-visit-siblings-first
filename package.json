@@ -1,6 +1,6 @@
 {
 	"name": "unist-util-visit-siblings-first",
-	"description": "A typescript library",
+	"description": "Breadth-first traversal for unist ASTs — visits siblings before descending into children",
 	"version": "1.0.0-alpha.2",
 	"type": "module",
 	"files": [
