@@ -4,7 +4,9 @@
 	"version": "1.0.0-alpha.1",
 	"type": "module",
 	"files": [
-		"dist"
+		"dist",
+		"README.md",
+		"package.json"
 	],
 	"module": "./dist/index.js",
 	"main": "./dist/index.cjs",
@@ -39,6 +41,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "^2.2.0",
 		"@types/bun": "^1.2.20",
+		"@types/unist": "^3.0.3",
 		"bumpp": "^10.2.3",
 		"bunup": "^0.11.2",
 		"simple-git-hooks": "^2.13.1",
@@ -63,5 +66,20 @@
 	"bugs": {
 		"url": "https://github.com/unigramjs/unist-util-visit-siblings-first/issues"
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"yocto-queue": "^1.2.1"
+	},
+	"private": false,
+	"keywords": [
+		"unist",
+		"ast",
+		"visit",
+		"walk",
+		"traverse",
+		"mdast",
+		"tgast",
+		"hast",
+		"unigramjs"
+	]
 }
