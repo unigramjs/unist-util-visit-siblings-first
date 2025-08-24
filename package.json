@@ -57,11 +57,11 @@
 		"publish:ci": "bun publish --access public --no-git-checks"
 	},
 	"dependencies": {
-		"@biomejs/biome": "^2.2.2",
 		"@types/unist": "^3.0.3",
 		"yocto-queue": "^1.2.1"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "^2.2.2",
 		"@release-it/conventional-changelog": "^10.0.1",
 		"@types/bun": "^1.2.20",
 		"bunup": "^0.11.4",
