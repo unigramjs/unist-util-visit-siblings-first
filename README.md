@@ -43,7 +43,7 @@ visit(tree, (node, i, ancestors) => {
 
 Output:
 ```txt
-type: root, index: null, ancestors: []
+type: root, index: undefined, ancestors: []
 type: a, index: 0, ancestors: [root]
 type: b, index: 1, ancestors: [root]
 type: a1, index: 0, ancestors: [root, a]
@@ -82,13 +82,13 @@ Parameters:
 ```ts
 export type Visitor<T extends Parent> = (
   node: Nodes<T>,
-  index: number | null,
+  index: number | undefined,
   ancestors: Parent[],
 ) => Action | void;
 ```
 
 - `node` — either the root `T` or `T`'s children.
-- `index` — number index of `node` in parent's `children`, or `null` for root.
+- `index` — number index of `node` in parent's `children`, or `undefined` for root.
 - `ancestors` — array of ancestor `Parent` nodes from root to parent.
 
 ### `Action`
