@@ -12,7 +12,7 @@ const tree: Parent = {
 
 test('should traverse correctly', () => {
 	const expected = [
-		['root', null, ''],
+		['root', undefined, ''],
 		['a', 0, 'root'],
 		['b', 1, 'root'],
 		['c', 2, 'root'],

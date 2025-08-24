@@ -6,7 +6,7 @@ import Queue from 'yocto-queue'
  * descending to children.
  *
  * The {@linkcode visitor} receives the node, its index in the parent's children
- * (`null` for root), and the array of ancestor nodes from root to parent.
+ * (`undefined` for root), and the array of ancestor nodes from root to parent.
  *
  * [breadth-first]: https://github.com/syntax-tree/unist?tab=readme-ov-file#breadth-first-traversal
  *
@@ -25,7 +25,7 @@ import Queue from 'yocto-queue'
  */
 export function visit<T extends Parent>(tree: T, visitor: Visitor<T>): void {
 	const queue = new Queue<QueueItem>()
-	queue.enqueue({ node: tree, index: null, ancestors: [] })
+	queue.enqueue({ node: tree, index: undefined, ancestors: [] })
 
 	while (true) {
 		const item = queue.dequeue()
@@ -54,13 +54,13 @@ export function visit<T extends Parent>(tree: T, visitor: Visitor<T>): void {
  * Visitor callback invoked for each visited node.
  *
  * @param node - The current node (root or a child).
- * @param index - Index of `node` in its parent's children, or `null` for root.
+ * @param index - Index of `node` in its parent's children, or `undefined` for root.
  * @param ancestors - Ancestor nodes from root to parent.
  * @returns Either an {@linkcode Action} to control traversal, or nothing (`void`).
  */
 export type Visitor<T extends Parent> = (
 	node: Nodes<T>,
-	index: number | null,
+	index: number | undefined,
 	ancestors: Parent[],
 ) =>
 	| Action
@@ -86,6 +86,6 @@ export interface Parent extends Unist.Parent {
 /** Item stored in the queue during traversal. */
 interface QueueItem {
 	node: Nodes
-	index: number | null
+	index: number | undefined
 	ancestors: Parent[]
 }
