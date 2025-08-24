@@ -25,10 +25,10 @@ jobs:
                           bun-version: latest
                   - run: bun ci
                   - run: bun run build
-                  - run: npx changelogithub
-                    continue-on-error: true
-                    env:
-                          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+                  # - run: npx changelogithub
+                  #   continue-on-error: true
+                  #   env:
+                  #         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
                   - run: bun run publish:ci
                     env:
                           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}

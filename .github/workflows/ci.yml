@@ -30,7 +30,7 @@ jobs:
                     run: bun ci
 
                   - name: Run validation
-                    run: bun run tsc && bun run lint && bun run format
+                    run: bun run check
 
                   - name: Run tests
-                    run: bun run test:coverage
+                    run: bun run test
