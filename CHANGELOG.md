@@ -1,3 +1,6 @@
 # Changelog
 
-# [1.0.0-alpha.5](https://github.com/unigramjs/unist-util-visit-siblings-first/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2025-08-24)
+All notable changes to this project will be documented in this file.
+See [standard-version] for commit guidelines.
+
+[standard-version]: https://github.com/conventional-changelog/standard-version

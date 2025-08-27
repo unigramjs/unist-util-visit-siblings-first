@@ -1,7 +1,13 @@
+export type { Literal, Node, Parent } from 'unist'
+export type { Test } from 'unist-util-is'
+export type { Options } from './types/visit.type.ts'
 export type {
-	Action,
-	Nodes,
-	Parent,
+	BuildVisitor,
+	Continue,
+	Exit,
+	Index,
+	Skip,
 	Visitor,
-} from './unist-util-visit-siblings'
-export { CONTINUE, EXIT, SKIP, visit } from './unist-util-visit-siblings'
+	VisitorResult,
+} from './types/visitor.type.ts'
+export { visit } from './unist-util-visit-siblings-first.ts'
