@@ -81,7 +81,7 @@ export function visit<Tree extends Unist.Node, Check extends Test>(
 	let queue: QueueItem[] = []
 	let nextLevelQueue: NextLevelQueueItem[] = []
 	let visitorAction: VisitorResult = 'CONTINUE'
-	const nodeIndexMap = new Map<VisitedNode, number | undefined>()
+	const nodeIndexMap = new WeakMap<VisitedNode, number | undefined>()
 
 	queue.push({
 		node: tree as VisitedNode,
@@ -198,7 +198,6 @@ export function visit<Tree extends Unist.Node, Check extends Test>(
 				queue = nextLevelQueue
 				nextLevelQueue = []
 				queueLength = queue.length
-				nodeIndexMap.clear()
 				queueIndex = 0
 			}
 		}
