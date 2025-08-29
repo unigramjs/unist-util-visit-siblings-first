@@ -61,8 +61,8 @@
 		"test:watch": "vitest watch",
 		"debug:test": "DEBUG='true' vitest run",
 		"debug:test:watch": "DEBUG='true' vitest watch",
-		"release": "changelogen --bump",
-		"publish": "changelogen gh release --publish"
+		"release": "changelogen gh release",
+		"publish": "changelogen --publish"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.2.2",
