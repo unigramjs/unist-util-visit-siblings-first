@@ -19,7 +19,7 @@ npm install unist-util-visit-siblings-first
 
 ## What it does
 
-[`visit`](#visittree-visitor) walks a unist tree in [breadth-first] order. It visits all siblings at a level first, then moves down to the next level.
+[`visit`](#visittree-visitor-options) walks a unist tree in [breadth-first] order. It visits all siblings at a level first, then moves down to the next level.
 
 ## Usage
 
