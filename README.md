@@ -120,7 +120,7 @@ Visits siblings before descending to children.
 #### Parameters
 - `tree` — the root node of a compatible unist AST.
 - [`visitor`](#visitornode-index-ancestors) — callback invoked for each node.
-- `options` — optional configs.
+- [`options`](#options) — optional configs.
 
 #### Returns
 Nothing.
