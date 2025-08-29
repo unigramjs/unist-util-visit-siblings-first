@@ -1,6 +1,6 @@
 {
 	"name": "unist-util-visit-siblings-first",
-	"version": "1.0.0-alpha.6",
+	"version": "1.0.0-alpha.7",
 	"description": "Breadth-first traversal for unist ASTs. Visits siblings before descending into children.",
 	"type": "module",
 	"license": "MIT",
@@ -61,7 +61,7 @@
 		"test:watch": "vitest watch",
 		"debug:test": "DEBUG='true' vitest run",
 		"debug:test:watch": "DEBUG='true' vitest watch",
-		"release": "changelogen --release",
+		"release": "changelogen --release --prerelease=alpha",
 		"release:github": "changelogen gh release"
 	},
 	"devDependencies": {
