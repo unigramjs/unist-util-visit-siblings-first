@@ -1,5 +1,5 @@
 import { test } from 'vitest'
-import { visit } from '../../src/unist-util-visit-siblings.ts'
+import { visit } from '../../src/unist-util-visit-siblings-first.ts'
 import { Result } from '../create-result.ts'
 import { getSample } from '../sample.ts'
 import type { Expected } from '../types.ts'
