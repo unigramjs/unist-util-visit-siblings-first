@@ -28,17 +28,17 @@ import type {Parent} from "unist-util-visit-siblings-first";
 import {visit} from "unist-util-visit-siblings-first";
 
 const tree: Parent = {
-	type: "root",
-	children: [
-		{type: "1", children: [{type: "1.1"}, {type: "1.2"}]},
-		{type: "2", children: [{type: "2.1"}, {type: "2.2"}]},
-	],
+  type: "root",
+  children: [
+    {type: "1", children: [{type: "1.1"}, {type: "1.2"}]},
+    {type: "2", children: [{type: "2.1"}, {type: "2.2"}]},
+  ],
 };
 
 visit(tree, (node, i, ancestors) => {
-	const ancestorTypes = ancestors.map((el) => el.type).join(", ");
-	console.log(`type: ${node.type}, index: ${i}, ancestors: [${ancestorTypes}]`);
-	return "CONTINUE";
+  const ancestorTypes = ancestors.map((el) => el.type).join(", ");
+  console.log(`type: ${node.type}, index: ${i}, ancestors: [${ancestorTypes}]`);
+  return "CONTINUE";
 });
 ```
 
@@ -66,7 +66,7 @@ visit(tree, (node) => {
   if (node.type === "1") return "SKIP";
   // Stop traversal completely.
   if (node.type === "1.1") return "EXIT";
-	return "CONTINUE";
+  return "CONTINUE";
 });
 ```
 
@@ -74,18 +74,18 @@ visit(tree, (node) => {
 
 ```ts
 visit(tree, (node, index, ancestors) => {
-	if (node.type === "2.1") {
-		const parent = ancestors.at(-1);
-		if (!parent || typeof index !== "number") return "CONTINUE";
+  if (node.type === "2.1") {
+    const parent = ancestors.at(-1);
+    if (!parent || typeof index !== "number") return "CONTINUE";
 
-		// Remove current node.
-		parent.children.splice(index, 1);
+    // Remove current node.
+    parent.children.splice(index, 1);
 
-		// IMPORTANT: return the index of the modified sibling
-		// so traversal resumes correctly.
-		return index;
-	}
-	return "CONTINUE";
+    // IMPORTANT: return the index of the modified sibling
+    // so traversal resumes correctly.
+    return index;
+  }
+  return "CONTINUE";
 });
 ```
 
@@ -93,20 +93,20 @@ visit(tree, (node, index, ancestors) => {
 
 ```ts
 visit(tree, (node, index, ancestors) => {
-	if (node.type === '2.2') {
-		const parent = ancestors.at(-1);
-		if (!parent || typeof index !== "number") return "CONTINUE";
+  if (node.type === '2.2') {
+    const parent = ancestors.at(-1);
+    if (!parent || typeof index !== "number") return "CONTINUE";
 
-		const newNode = { type: "new-node", value: "Hello, world!"};
+    const newNode = { type: "new-node", value: "Hello, world!"};
 
-		// Replace the previous sibling and the current node.
-		parent.children.splice(index - 1, 2, newNode);
+    // Replace the previous sibling and the current node.
+    parent.children.splice(index - 1, 2, newNode);
 
-		// IMPORTANT: return the index of the modified sibling
-		// so traversal resumes correctly.
-		return index - 1;
-	}
-	return "CONTINUE";
+    // IMPORTANT: return the index of the modified sibling
+    // so traversal resumes correctly.
+    return index - 1;
+  }
+  return "CONTINUE";
 });
 ```
 
@@ -150,7 +150,7 @@ If you only modify the current node or its children, returning an index is not r
 It must return one of:
 - `"EXIT"` to stop traversal,
 - `"SKIP"` to skip subtree (children),
-- `"CONTINUE"` to	continue, or
+- `"CONTINUE"` to  continue, or
 - an index number to resume traversal at that index.
 
 ### `Options`
